@@ -6,18 +6,15 @@
 import math # importing the math module to use its functions
 
 class Circle: # creating the class "Circle"
-  x = 0.0 # x coordinate of circle
-  y = 0.0 # y coordinate of circle 
-  r = 0.0 # radius
 
   def __init__(self, x, y, r): # this method ensures that the radius is positive
     if r < 0: # if radius is negative
       r = -r # Converting r to a positive value
 
     # assigning the values to the circle class
-    self.x = x
-    self.y = y
-    self.r = r
+    self.__x = x
+    self.__y = y
+    self.__r = r
 
   def area_of_circle(self): # this method returns the area of a circle
     area = math.pi * self.r**2 # calculating the area
@@ -34,7 +31,7 @@ class Circle: # creating the class "Circle"
       area_word2 = "Circle 2"
       return area_word2, area_of_c2 # return to the main program
 
-def user_input(): # this function asks for the user input
+def get_input(): # this function asks for the user input
   while True: # infinite loop
     try: # ensuring that the user inputs a float
       x = float(input("Enter the x coordinate: ")) # asking for the x coordinate
@@ -49,7 +46,7 @@ def user_input(): # this function asks for the user input
 
 def start(): # this function calls the functions/classes above to perform tasks
   print("Circle 1")
-  inputs_1 = user_input() # asking for the first user inputs
+  inputs_1 = get_input() # asking for the first user inputs
 
   c1 = Circle(inputs_1[0], inputs_1[1], inputs_1[2]) # creating a c1 object
   c1.x = inputs_1[0] # first number of the user's input is the x coordinate
@@ -60,7 +57,7 @@ def start(): # this function calls the functions/classes above to perform tasks
   print()
 
   print("Circle 2")
-  inputs_2 = user_input()
+  inputs_2 = get_input()
 
   c2 = Circle(inputs_2[0], inputs_2[1], inputs_2[2]) # creating a c2 object
   c2.x = inputs_2[0] # first number of the user's input is the x coordinate
