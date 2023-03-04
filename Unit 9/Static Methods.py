@@ -65,27 +65,30 @@ def choices(): # this function asks the user for the choices
     print()
     choice = input("Enter your choice (A, B, C): ") # asking for the user's choices
 
-    if choice == "A" or choice == "a": # if the user enters "A"
-        inputs = user_input_2_fractions() # calling the 'user_input_2_fractions()' function
-        fractions_product = Fraction.product(inputs[0], inputs[1], inputs[2], inputs[3]) # calling the 'products()' method 
-        print(f"The product of the two fractions is {fractions_product}") # displaying the result
-        print()
+    while choice != 'A' and choice != 'B' and choice != "C" and choice != "a" and choice != "b" and choice != "c": # ensuring the user enters a proper input
+      choice = input("Please enter 'A', 'B' or 'C': ") 
+    else:
+        if choice == "A" or choice == "a": # if the user enters "A"
+            inputs = user_input_2_fractions() # calling the 'user_input_2_fractions()' function
+            fractions_product = Fraction.product(inputs[0], inputs[1], inputs[2], inputs[3]) # calling the 'products()' method 
+            print(f"The product of the two fractions is {fractions_product}") # displaying the result
+            print()
 
-    if choice == "B" or choice == "b": # if the user enters "B"
-        inputs_2 = user_input_1_fraction() # calling the 'user_input_1_fractions()' function
-        fraction_absolute = Fraction.absolute(inputs_2[0], inputs_2[1]) # calling the 'absolute()' method 
-        print(f"The absolute value of the fraction is {fraction_absolute}") # displaying the result
-        print()
+        if choice == "B" or choice == "b": # if the user enters "B"
+            inputs_2 = user_input_1_fraction() # calling the 'user_input_1_fractions()' function
+            fraction_absolute = Fraction.absolute(inputs_2[0], inputs_2[1]) # calling the 'absolute()' method 
+            print(f"The absolute value of the fraction is {fraction_absolute}") # displaying the result
+            print()
 
-    if choice == "C" or choice == "c": # if the user enters "C"
-        inputs_3 = user_input_1_fraction()  # calling the 'user_input_1_fractions()' function
-        fraction_is_positive = Fraction.is_positive(inputs_3[0]) # calling the 'is_positive()' method 
-        if fraction_is_positive == True: # if the fraction is positive
-            print("True: The fraction is positive") # displaying the result
+        if choice == "C" or choice == "c": # if the user enters "C"
+            inputs_3 = user_input_1_fraction()  # calling the 'user_input_1_fractions()' function
+            fraction_is_positive = Fraction.is_positive(inputs_3[0]) # calling the 'is_positive()' method 
+            if fraction_is_positive == True: # if the fraction is positive
+                print("True: The fraction is positive") # displaying the result
 
-        elif fraction_is_positive == False: # if the fraction is not positive
-            print("False: The fraction is negative") # displaying the result
-        print()
+            elif fraction_is_positive == False: # if the fraction is not positive
+                print("False: The fraction is negative") # displaying the result
+            print()
     
 def start(): # this  funciton will loop until the user indicates that they are done using the program
   choice = input("Do you want to start? (y,n) ") # asking the user to start
