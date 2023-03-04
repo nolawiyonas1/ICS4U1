@@ -67,6 +67,7 @@ def choices(): # this function asks the user for the choices
 
     while choice != 'A' and choice != 'B' and choice != "C" and choice != "a" and choice != "b" and choice != "c": # ensuring the user enters a proper input
       choice = input("Please enter 'A', 'B' or 'C': ") 
+      
     else:
         if choice == "A" or choice == "a": # if the user enters "A"
             inputs = user_input_2_fractions() # calling the 'user_input_2_fractions()' function
