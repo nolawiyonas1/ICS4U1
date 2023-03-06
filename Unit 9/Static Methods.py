@@ -88,7 +88,7 @@ def choices(): # this function asks the user for the choices
                 print("True: The fraction is positive") # displaying the result
 
             elif fraction_is_positive == False: # if the fraction is not positive
-                print("False: The fraction is negative") # displaying the result
+                print("False: The fraction is not positive") # displaying the result
             print()
     
 def start(): # this  funciton will loop until the user indicates that they are done using the program
